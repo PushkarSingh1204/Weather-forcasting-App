@@ -20,21 +20,11 @@ Detailed Weather Metrics: Shows humidity percentage and wind speed in km/h
 
 Location Display: Shows the searched city name along with country information
 
-🔧 API Integration & Backup System:-
-
-Primary API: OpenWeatherMap API
-Uses OpenWeatherMap's free weather API service
-
-Requires API key: 1b583f6e6461ad21a423827ee79b0cc3
-
-Endpoint: https://api.openweathermap.org/data/2.5/weather
 Provides comprehensive weather data including temperature, humidity, wind speed, and weather icons
 
-Backup API: wttr.in Service
 Implements a robust fallback system using wttr.in (completely free weather service)
 Automatically switches to backup when primary API fails or API key is invalid
 
-Endpoint: https://wttr.in/{city}?format=j1
 Includes comprehensive weather code mapping to OpenWeatherMap icons for consistency
 
 Error Handling & Resilience: Automatic fallback between primary and backup APIs
