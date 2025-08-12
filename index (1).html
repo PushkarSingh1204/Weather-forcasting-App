@@ -1,46 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Forecasting App</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<body data-theme="light" class="rainy">
+  <!-- Theme Switcher -->
+  <button class="theme-toggle" id="themeToggle">
+    <i class='bx bx-moon' id="themeIcon"></i>
+  </button>
 
-<body>
   <div class="container">
-    <div class="search-box">
-      <i class='bx bx-map'></i>
-      <input type="text" placeholder="Search location..." id="locationInput">
-      <button id="searchBtn"><i class='bx bx-search'></i></button>
-    </div>
-    
-    <div class="weather-box">
-      <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" id="weatherIcon">
-      <p class="temperature" id="temperature">11<span>°C</span></p>
-      <p class="description" id="description">Light Rain</p>
-      <p class="location" id="location">Location</p>
+    <!-- Loading Skeleton -->
+    <div class="skeleton-loader" id="skeletonLoader">
+      <div class="skeleton-search"></div>
+      <div class="skeleton-weather">
+        <div class="skeleton-icon"></div>
+        <div class="skeleton-temp"></div>
+        <div class="skeleton-desc"></div>
+        <div class="skeleton-location"></div>
+      </div>
+      <div class="skeleton-details">
+        <div class="skeleton-detail-item"></div>
+        <div class="skeleton-detail-item"></div>
+      </div>
     </div>
 
-    <div class="weather-details">
-      <div class="detail-item">
-        <i class='bx bx-water'></i>
-        <div class="value" id="humidity">71%</div>
-        <div class="label">Humidity</div>
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+      <div class="search-box">
+        <i class='bx bx-map'></i>
+        <input type="text" placeholder="Search location..." id="locationInput">
+        <button id="searchBtn"><i class='bx bx-search'></i></button>
       </div>
-      <div class="detail-item">
-        <i class='bx bx-wind'></i>
-        <div class="value" id="windSpeed">6Km/h</div>
-        <div class="label">Wind Speed</div>
+      
+      <div class="weather-box">
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" id="weatherIcon">
+        <p class="temperature" id="temperature">21<span>°C</span></p>
+        <p class="description" id="description">Heavy intensity rain</p>
+        <p class="location" id="location">Tokyo, JP</p>
+      </div>
+
+      <div class="weather-details">
+        <div class="detail-item">
+          <i class='bx bx-water'></i>
+          <div class="value" id="humidity">88%</div>
+          <div class="label">Humidity</div>
+        </div>
+        <div class="detail-item">
+          <i class='bx bx-wind'></i>
+          <div class="value" id="windSpeed">6Km/h</div>
+          <div class="label">Wind Speed</div>
+        </div>
+      </div>
+
+      <!-- Outfit Suggestions -->
+      <div class="outfit-suggestions" id="outfitSuggestions">
+        <h3><i class='bx bx-closet'></i> What to Wear</h3>
+        <div class="outfit-content" id="outfitContent">
+          <p>🧥 Light jacket recommended for cool weather</p>
+          <p>☂️ Don't forget your umbrella!</p>
+        </div>
       </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
